@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>100x Impact, conversation prep</title>
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --fg: #1a1a1a;
+    --muted: #5c5a55;
+    --rule: #e0ddd6;
+    --accent: #8b3a1c;
+    --accent-soft: #f4ebe4;
+    --panel: #ffffff;
+    --highlight: #fff5d6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #17161a;
+      --fg: #ece9e2;
+      --muted: #a8a39b;
+      --rule: #2f2d31;
+      --accent: #e59a78;
+      --accent-soft: #2a211d;
+      --panel: #1e1d20;
+      --highlight: #3a3320;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", "Helvetica Neue", Arial, system-ui, sans-serif;
+    font-size: 18px;
+    line-height: 1.65;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  strong, b { font-weight: 400; }
+  h1, h2, h3, h4 { font-weight: 400; }
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 36px 28px 140px;
+  }
+
+  header.doc {
+    border-bottom: 2px solid var(--fg);
+    padding-bottom: 18px;
+    margin-bottom: 22px;
+  }
+  .kicker {
+    color: var(--muted);
+    font-size: 13px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  h1 {
+    font-size: 34px;
+    line-height: 1.15;
+    margin: 0;
+    letter-spacing: -0.015em;
+  }
+
+  h2 {
+    font-size: 15px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin: 56px 0 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  h3 {
+    font-size: 21px;
+    line-height: 1.3;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+    margin: 32px 0 10px;
+    color: var(--fg);
+    scroll-margin-top: 20px;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+  h3:first-of-type { margin-top: 8px; }
+
+  p { margin: 0 0 14px; }
+  strong { font-weight: 400; color: var(--fg); }
+  em { font-style: italic; }
+  a { color: var(--accent); }
+
+  ul, ol { margin: 0 0 14px; padding-left: 24px; }
+  li { margin-bottom: 6px; }
+  li:last-child { margin-bottom: 0; }
+
+  /* TOC */
+  nav.toc {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    padding: 14px 18px;
+    margin: 0 0 32px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  nav.toc .toc-label {
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  nav.toc ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+  }
+  nav.toc a {
+    color: var(--fg);
+    text-decoration: none;
+    padding: 2px 0;
+  }
+  nav.toc a:hover { color: var(--accent); text-decoration: underline; }
+
+  /* Framing / intro callout */
+  .frame {
+    background: var(--accent-soft);
+    border-left: 4px solid var(--accent);
+    padding: 18px 22px;
+    border-radius: 0 4px 4px 0;
+    margin: 0 0 20px;
+  }
+  .frame p:last-child { margin-bottom: 0; }
+
+  /* the-line callout for key phrases to remember */
+  .line {
+    background: var(--highlight);
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin: 12px 0 16px;
+    font-style: italic;
+    border-left: 3px solid var(--accent);
+  }
+  .line::before {
+    content: "The line: ";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 2px;
+  }
+  .line.strong::before { content: "Strongest line: "; }
+  .line.frame-line::before { content: "Frame to land: "; }
+
+  .lead {
+    color: var(--muted);
+    font-size: 13px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: -6px 0 12px;
+  }
+  .lead.jack { color: #8b3a1c; }
+  @media (prefers-color-scheme: dark) { .lead.jack { color: #e59a78; } }
+  .lead.max { color: #2c5a7a; }
+  @media (prefers-color-scheme: dark) { .lead.max { color: #78b0d4; } }
+
+  /* Warning / guardrail block */
+  .guardrail {
+    border: 1px dashed var(--muted);
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin: 14px 0;
+    font-size: 17px;
+  }
+  .guardrail::before {
+    content: "Guardrail";
+    display: block;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 400;
+    margin-bottom: 4px;
+  }
+  .guardrail p:last-child { margin-bottom: 0; }
+
+  /* Bring-questions */
+  ol.bring {
+    list-style: none;
+    counter-reset: bring;
+    padding-left: 0;
+  }
+  ol.bring li {
+    counter-increment: bring;
+    padding: 14px 0 14px 40px;
+    border-top: 1px solid var(--rule);
+    position: relative;
+    margin-bottom: 0;
+  }
+  ol.bring li:last-child { border-bottom: 1px solid var(--rule); }
+  ol.bring li::before {
+    content: counter(bring);
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 28px;
+    height: 28px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  @media (max-width: 560px) {
+    body { font-size: 17px; line-height: 1.65; }
+    .wrap { padding: 24px 18px 100px; }
+    h1 { font-size: 28px; }
+    h3 { font-size: 19px; }
+  }
+
+  @media print {
+    body { background: #fff; color: #000; font-size: 11pt; }
+    .wrap { max-width: none; padding: 0; }
+    nav.toc { display: none; }
+    h2 { color: #000; }
+    a { color: #000; }
+    h3 { page-break-after: avoid; }
+    .frame, .line, .guardrail { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="doc">
+  <div class="kicker">Conversation prep · Nick Stanhope</div>
+  <h1>100x Impact</h1>
+</header>
+
+<nav class="toc" aria-label="Contents">
+  <div class="toc-label">Jump to</div>
+  <ul>
+    <li><a href="#frame">Frame</a></li>
+    <li><a href="#brief">Behind the brief</a></li>
+    <li><a href="#general">General questions</a></li>
+    <li><a href="#tandem">Tandem questions</a></li>
+    <li><a href="#bring">Questions to bring</a></li>
+    <li><a href="#likely">Not on the list</a></li>
+    <li><a href="#shoehorn">Shoehorn</a></li>
+    <li><a href="#questions">Questions</a></li>
+  </ul>
+</nav>
+
+<section id="frame">
+  <div class="frame">
+    <p>Nick has told us how he thinks and handed us the questions. The frame is his: <strong>fit and collaboration, not skills</strong>, he's conceded everyone shortlisted can do the work. The goal is to be the people he wants in the room for six months. Warm, unguarded, thinking out loud, comfortable disagreeing with each other. Over-polished loses this one. <strong>Disagreeing with him thoughtfully is worth more than a polished answer.</strong></p>
+    <p>Agree in advance who leads what, <strong>Jack</strong> on strategy, Working Group and fit; <strong>Max</strong> on risk, prototyping and AI-limits, but both stay live and step in unprompted, because if Max is quiet the "no handoffs, both founders do the work" story rings hollow. No presentation, just Nick, treat it as a conversation.</p>
+  </div>
+</section>
+
+<h2 id="brief">The thing behind the brief</h2>
+<p>Nick wrote he's assessing fit for <em>"further phases of work in the future"</em>. That suggests 100x is thinking about a build partner after the review, and it is probably why the practitioner positioning got us shortlisted.</p>
+<p>The trap is the mirror image: if the review looks like a sales funnel for our own build work, the vendor-neutrality claim collapses.</p>
+<div class="line">Hold both openly, and say unprompted if the moment arises, we would like to build what comes out of this, and <strong>precisely because of that</strong> we will be disciplined about recommending things we would not be the ones to build.</div>
+
+<h2 id="general">General questions</h2>
+
+<h3>What do you think is the biggest risk in this project that isn't explicitly mentioned in the brief?</h3>
+<div class="line frame-line">The report-to-implementation gap, a great report nobody owns once we leave. That's why Phase 3 makes the Working Group future governance, not audience.</div>
+<p><strong>Don't say stakeholder availability</strong>, it's already in our proposal and it's what everyone will say. The real risk is the <strong>report-to-implementation gap</strong>: a small team under growth pressure treats this as a systems project, and it ends up owned by nobody once we leave. A good report that doesn't change how people work.</p>
+<p>That's why Phase 3 embeds the Working Group as the future governance body rather than an audience.</p>
+<p>Hold that with conviction, and keep the <strong>LSE systems boundary</strong> in reserve, if LSE's IT environment constrains architecture and AI tooling choices, part of the roadmap could be undeliverable, which is why we probe it in month one, not month five. The reserve option doubles as pre-empting the LSE question.</p>
+
+<h3>At the end of six months, what decisions should the 100x senior team be able to make that they can't make today?</h3>
+<div class="line frame-line">Today those are guesses made in people's heads. In six months they are <strong>decisions with evidence and price tags attached</strong>, and that means less time wrestling systems, more time on the portfolio.</div>
+<p>Answer in their language:</p>
+<ul>
+  <li>whether to <strong>build or buy</strong>, and roughly what it costs;</li>
+  <li>which <strong>AI uses to sanction and which to prohibit</strong>, and on what governance basis;</li>
+  <li><strong>who owns which data</strong> and what the stewardship model is;</li>
+  <li>what <strong>capability to hire or grow</strong> internally.</li>
+</ul>
+<p>Tie back to ventures: better decisions here mean less time wrestling systems and more time on the portfolio.</p>
+
+<h3>How do you propose working with the 100x Data &amp; AI Working Group?</h3>
+<div class="line frame-line">Co-analysts, not audience, involved from inception, holding the governance mandate at the end. Success is they don't need us afterwards.</div>
+<p>His favourite theme, so answer with the instinct, not a process diagram. They are <strong>co-analysts, not an audience</strong>, involved from inception, testing findings before they are findings, and handed the governance mandate at the closing session.</p>
+<p>The success condition is that the Working Group doesn't need us afterwards. We'd rather they feel like co-authors. <strong>Don't over-engineer it.</strong></p>
+
+<h3>Where do you think AI is not the right answer for organisations like 100x?</h3>
+<p class="lead max">Max leads</p>
+<div class="line frame-line">Our job is to find the few places AI genuinely frees people up, <strong>not to maximise AI</strong>. Human-in-the-loop is the default, not the exception.</div>
+<p>A trust question, he wants to know we'll tell him not to. Be specific:</p>
+<ul>
+  <li><strong>actual decision-making</strong>, AI is for facilitation, structuring the options, surfacing the pattern, never for the call itself;</li>
+  <li><strong>venture selection judgement and relationship work</strong>, where accountability and trust can't be delegated;</li>
+  <li><strong>applicant-facing AI in the intake pipeline</strong>, the best founders won't want to feel screened by a model rather than read by a person, so heavy AI at the applicant layer risks hurting the very thing 100x is trying to attract;</li>
+  <li><strong>large-dataset analysis where you throw the whole set at a model</strong>, context limits mean it silently drops or hallucinates over what won't fit, so the right move is deterministic analysis first and AI on the summarised output, not the raw pile;</li>
+  <li>anywhere the <strong>data foundation is broken</strong>, because AI on bad data industrialises the mess;</li>
+  <li><strong>low-volume processes</strong> where automation costs more than the manual task;</li>
+  <li>knowledge that <strong>lives in relationships rather than documents</strong>;</li>
+  <li>anywhere sending venture data to <strong>third-party models creates governance or data-protection risk</strong> out of proportion to the payoff.</li>
+</ul>
+<p>That's the human-in-the-loop thread from GatBot and the workshops. Worth noting the <strong>CHIRP work</strong> in this frame too, we're running it with the <strong>Alan Turing Institute</strong> as a data study group full of data scientists, and that piece is primarily a research project, not a development one, which is exactly the shape of thinking this question is asking about.</p>
+
+<div class="guardrail">
+  <p>A real example of advising a client <em>against</em> an AI use case would be the strongest version, but only if we have a true one. <strong>SFCT does not supply it</strong>: that engagement ended because their AI budget tightened and they built in-house on Azure, not because we recommended against the use case.</p>
+  <p>What is honestly claimable is the <strong>shape</strong> of the SFCT work, a cheap prototype built specifically to test the value of a use case before any production investment, which is how you kill things before they get expensive.</p>
+  <p>If either of us has a genuine "we told a client no" story, bring it. Otherwise use the SFCT framing as it actually happened. <strong>Don't manufacture a recommendation-against</strong>, one follow-up unravels it, and this is the question where we can least afford that.</p>
+</div>
+
+<h3>If the budget was increased by £10,000, what would you suggest adding to the scope?</h3>
+<div class="line frame-line">Convert findings into working things, a running quick-win and capability sessions so the handover sticks. Not more interviews.</div>
+<p>Don't grab, and don't spread it thinner across the review, <strong>convert findings into working things.</strong> More prototype-spike time, or implementing the single top quick-win so the engagement ends with something running, plus a couple of staff capability sessions so the handover sticks.</p>
+<p>Two shapes to offer, framed as a choice for him:</p>
+<ul>
+  <li><strong>Take a successful prototype through to a usable tool</strong>, so a spike that proved its value ends the engagement as something the team actually uses, not a slide;</li>
+  <li><strong>Drill down on a single area the review has surfaced as underdone</strong>, e.g. targeted staff training on a specific tool, or a deeper data-analysis pass on a dataset where the initial review only had time to scratch the surface.</li>
+</ul>
+<p>Both stay consistent with hand-over-not-dependency, and this also answers his unspoken question about the transition to a build phase without us having to raise it.</p>
+<p><strong>Avoid "more interviews, more analysis"</strong>, it sounds like scope inflation.</p>
+
+<h2 id="tandem">Tandem questions</h2>
+
+<h3>Much of your experience involves building systems, which is appealing as we may transition to this phase with our partner. But can you describe a project where your main role was organisational strategy rather than development?</h3>
+<p class="lead jack">Jack leads · most important question, our one soft spot</p>
+<div class="line frame-line">Same discipline the brief needs, scoping and prioritisation under constraint, proven live on OZEAON right now. On 100x, applied from the opposite direction.</div>
+<p><strong>Answer honestly, the honest version is stronger.</strong> Lead with <strong>OZEAON</strong>, where Jack now leads scope definition, phasing and delivery: running standups and the delivery cadence, writing the scope documents, making the prioritisation calls with the team and confirming direction with the founder.</p>
+<p>The <strong>Phase 0-to-6 structure</strong> is the evidence, an enormous product ambition cut into a defensible MVP under a hard 30–45 day window, with follows, mobile responsive, payments and the rest deferred into later phases. That is <strong>ruthless prioritisation under constraint</strong>, which is the muscle this engagement needs. Several of those calls were data-structure calls, the same discipline the brief asks for.</p>
+<p>Genuine secondary examples if he wants more:</p>
+<ul>
+  <li>the <strong>OZEAON database audit</strong>, assessment and written recommendations before any remediation;</li>
+  <li><strong>OZEAON AI</strong> and the other OZEAON strategy calls, deciding where AI earns its place in the product and where it doesn't;</li>
+  <li><strong>Red Cross consulting</strong>, advisory work with no build attached;</li>
+  <li>the <strong>SFCT helpdesk</strong>, a strategic question about whether to invest, answered with a cheap prototype;</li>
+  <li>the <strong>ten-workshop programme plus FAC business-model advisory</strong>, pure advisory and capability work, no code in it;</li>
+  <li><strong>FAC declining-opportunities analysis</strong>, three-to-four years of application data cut to surface the pattern behind the decline, informing the business-model conversation;</li>
+  <li>the <strong>countrywide software-engineering apprentices work</strong>, where the analysis surfaced that we were training more than half of London's software-engineering apprentices, a finding nobody had until the data was pulled together.</li>
+</ul>
+<p>Use these to widen the answer, not to replace the live OZEAON evidence, which is stronger and more current.</p>
+
+<div class="guardrail">
+  <p><strong>Nick will smell overclaim.</strong> This is release and delivery scoping for a product build, not an organisational data-and-AI strategy engagement, same underlying discipline, not identical work. Frame it as <em>"this is how I think and make prioritisation calls,"</em> not <em>"I've done a data and AI review before."</em></p>
+  <p>Be careful with the word "strategy" itself: what this proves is <strong>sound scoping and prioritisation under constraint and holding a delivery line</strong>, which is exactly what he's testing for. Claim that, not the bigger word.</p>
+</div>
+
+<div class="line">We're not McKinsey, and here's why that's what you want, every recommendation comes with a <strong>cost and effort estimate we can stand behind because we build these systems the rest of the week.</strong></div>
+
+<div class="line strong">On OZEAON we're designing a data model from scratch, where we control it. On the SSC and audit work we inherited and rebuilt an estate we didn't build. We've now worked data structure from both ends. On 100x we'll be assessing and mapping an estate we didn't build and largely can't rebuild, <strong>same discipline, applied from the opposite direction.</strong> Naming that difference ourselves is more convincing than glossing it.</div>
+
+<p><strong>On people management:</strong> worth claiming as delivery leadership, running the cadence, coordinating the people on the project, keeping things moving, but for a two-person team don't headline it in a way that implies a scale of operation we don't run. It supports the workload-shift question more than the strategy one.</p>
+
+<h3>How would you identify and prioritise prototyping opportunities?</h3>
+<p class="lead max">Max leads</p>
+<div class="line frame-line">Value-if-true against cost-to-test. If a failed spike doesn't change the roadmap, it's a demo, and <strong>we don't do demos</strong>.</div>
+<p><strong>Criteria, not vibes.</strong> A spike qualifies when it:</p>
+<ul>
+  <li><strong>De-risks a priority recommendation</strong>,</li>
+  <li>Is <strong>testable in one or two days</strong> against real 100x data,</li>
+  <li>Is <strong>decision-changing</strong>, if the spike fails, the roadmap changes.</li>
+</ul>
+<p>Prioritise by <strong>value-if-true against cost-to-test</strong>. Anything that fails those tests is a demo, not a spike, and <strong>we don't do demos.</strong></p>
+<p>Expect two shapes to surface, and we'd deliberately run a mix of both:</p>
+<ul>
+  <li><strong>Low-hanging fruit</strong>, small, obvious, cheap wins that ship value quickly and build trust in the roadmap;</li>
+  <li><strong>Conceptual tools that could streamline whole processes</strong>, higher upside but real risk of over-engineering, so we scope them tight and kill them fast if the spike doesn't hold up.</li>
+</ul>
+<p>Finding the balance between the two is the judgement call, and <strong>feasibility is one of our strong points</strong>, because we build these things the rest of the week we can tell quickly what's a two-day spike and what's a three-month project pretending to be one.</p>
+
+<h3>As a two-person team, how would you manage workload across six months if priorities shifted significantly?</h3>
+<div class="line frame-line">Fixed price is your flexibility. If X comes in, we <strong>name what goes out</strong>, we don't pretend to elastic capacity, and we can't absorb a doubled scope.</div>
+<p><strong>Don't be defensive</strong>, it's in the proposal as an honest risk with a mitigation.</p>
+<p>The <strong>fixed price is 100x's flexibility</strong>: reprioritisation happens within the envelope at phase boundaries, with explicit trade-offs, if X comes in, we <strong>name what goes out</strong> rather than pretending to elastic capacity.</p>
+<p>Both of us work across both strands so nothing is trapped in one head, everything is documented continuously.</p>
+<p><strong>Two of the reasons a two-person shop actually copes with shifting priorities:</strong></p>
+<ul>
+  <li><strong>We work genuinely agile</strong>, no committee, no change-request theatre, we can re-plan a phase inside a day rather than a week;</li>
+  <li><strong>Tight-knit talent network we can pull in on demand</strong>, business analysts, consultants, data architects, data scientists, technical writers, plus deeper specialists like Microsoft 365 governance, so if a shift needs a skill we don't lead with, we can call it in without hiring or handing the relationship off.</li>
+</ul>
+<p>Be honest about the limit: <strong>we can't absorb a doubled scope</strong>, and saying so is the answer he's looking for.</p>
+<div class="line">Two people means less bench, but also <strong>no coordination overhead and total continuity</strong>, the people who start the work finish it.</div>
+
+<h2 id="bring">Three questions to bring</h2>
+<p>A conversation format means he's watching whether we probe.</p>
+<ol class="bring">
+  <li><strong>What triggered this review now</strong>, and why this shape of engagement.</li>
+  <li>What authority the <strong>Data &amp; AI Working Group</strong> actually has, can it make decisions, or does it recommend upward.</li>
+  <li>What he'd want to be true <strong>at month twelve, beyond the report.</strong> <em>This one invites him to talk about the build phase himself.</em></li>
+</ol>
+
+<h2 id="likely">Not on his list, but likely</h2>
+<p>He may ask something personal, <strong>why we started Tandem, or how the two of us work together</strong>, because "fit" means him picturing working with us. Have a genuine, short answer ready.</p>
+<p>If any of the current <strong>OZEAON scoping calls</strong> have a data-structure or where-does-AI-earn-its-place dimension, that lets us answer the strategy question and the AI-limits question from the same live example, <strong>the most convincing thing we could do in that room.</strong></p>
+
+<h2 id="shoehorn">Shoehorn</h2>
+<p>Things to work into the conversation if the moment lets you.</p>
+<ol class="bring">
+  <li><strong>AIR 2026 with Steve and Zigzag</strong>, drop it as evidence we're already in the room with the kind of people and events 100x cares about.</li>
+  <li><strong>Open and collaborative, without tangling lines of communication</strong>, we like to work in the open, but with clear single points of contact so nobody's chasing two people for the same answer.</li>
+</ol>
+
+<h2 id="questions">Questions</h2>
+<ol class="bring">
+  <li>Who are the Working Group and what expertise do they have?</li>
+</ol>
+
+</div>
+</body>
+</html>
