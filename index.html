@@ -394,7 +394,6 @@
   <li><strong>who owns which data</strong> and what the stewardship model is;</li>
   <li>what <strong>capability to hire or grow</strong> internally.</li>
 </ul>
-<p>Tie back to ventures: better decisions here mean less time wrestling systems and more time on the portfolio.</p>
 
 <h3 id="q-wg">How do you propose working with the 100x Data &amp; AI Working Group?</h3>
 <div class="line frame-line">Co-analysts, not audience, involved from inception, holding the governance mandate at the end. Success is they don't need us afterwards.</div>
@@ -404,7 +403,8 @@
 
 <h3 id="q-ai-limits">Where do you think AI is not the right answer for organisations like 100x?</h3>
 <div class="line frame-line">Our job is to find the few places AI genuinely frees people up, <strong>not to maximise AI</strong>. Human-in-the-loop is the default, not the exception.</div>
-<p>A trust question, he wants to know we'll tell him not to. Be specific:</p>
+<p>A trust question, he wants to know we'll tell him not to. Ground it in live evidence before the abstractions: <strong>GatBot</strong> and the workshops are where we've held the human-in-the-loop line in practice; on <strong>Amagi Brain Health</strong> we had to seriously curb the client's plan for AI usage because <strong>AI is not magic</strong>, we scoped it back to what would actually work rather than what sounded good on the slide; and <strong>CHIRP</strong> is shaped deliberately as a research project with <strong>Alan Turing Institute</strong> data scientists, not a development one, which is exactly the shape of thinking this question is asking about.</p>
+<p>From there, be specific about where AI isn't the answer:</p>
 <ul>
   <li><strong>actual decision-making</strong>, AI is for facilitation, structuring the options, surfacing the pattern, never for the call itself;</li>
   <li><strong>venture selection judgement and relationship work</strong>, where accountability and trust can't be delegated;</li>
@@ -415,7 +415,6 @@
   <li>knowledge that <strong>lives in relationships rather than documents</strong>;</li>
   <li>anywhere sending venture data to <strong>third-party models creates governance or data-protection risk</strong> out of proportion to the payoff.</li>
 </ul>
-<p>That's the human-in-the-loop thread from GatBot and the workshops. Worth noting the <strong>CHIRP work</strong> in this frame too, we're running it with the <strong>Alan Turing Institute</strong> as a data study group full of data scientists, and that piece is primarily a research project, not a development one, which is exactly the shape of thinking this question is asking about.</p>
 
 <div class="guardrail">
   <p>A real example of advising a client <em>against</em> an AI use case would be the strongest version, but only if we have a true one. <strong>SFCT does not supply it</strong>: that engagement ended because their AI budget tightened and they built in-house on Azure, not because we recommended against the use case.</p>
@@ -440,6 +439,11 @@
 <p><strong>Answer honestly, the honest version is stronger.</strong> Lead with <strong>OZEAON</strong>, where Jack now leads scope definition, phasing and delivery: running standups and the delivery cadence, writing the scope documents, making the prioritisation calls with the team and confirming direction with the founder.</p>
 <p>Jack also now <strong>owns OZEAON's KM policy end to end</strong>, inherited from a shambolic starting point and being audited and rebuilt live. That's a second live workstream at OZEAON that's not building software, it's organisational strategy on the third leg of the 100x brief. Say it explicitly if the KM angle comes up, or if he presses for a non-development example, it's the cleanest one we have and it's happening right now.</p>
 <p>The <strong>Phase 0-to-6 structure</strong> is the evidence, an enormous product ambition cut into a defensible MVP under a hard 30–45 day window, with follows, mobile responsive, payments and the rest deferred into later phases. That is <strong>ruthless prioritisation under constraint</strong>, which is the muscle this engagement needs. Several of those calls were data-structure calls, the same discipline the brief asks for.</p>
+
+<div class="line strong">On OZEAON we're designing a data model from scratch, where we control it. On the SSC and audit work we inherited and rebuilt an estate we didn't build. We've now worked data structure from both ends. On 100x we'll be assessing and mapping an estate we didn't build and largely can't rebuild, <strong>same discipline, applied from the opposite direction.</strong> Naming that difference ourselves is more convincing than glossing it.</div>
+
+<div class="line">We're not McKinsey, and here's why that's what you want, every recommendation comes with a <strong>cost and effort estimate we can stand behind because we build these systems the rest of the week.</strong></div>
+
 <p>Genuine secondary examples if he wants more:</p>
 <ul>
   <li>the <strong>UK Skills Explorer</strong> for Skills England with Warwick, this is our headline evidence for <strong>defining a core data model and entity definitions</strong>, which is a named deliverable in the brief. 47k entities and 170k relationships turned into public infrastructure, and Nick has read this in the proposal, so referencing it directly ties the strategy answer back to the specific deliverable he's paying for;</li>
@@ -458,10 +462,6 @@
   <p>Be careful with the word "strategy" itself: what this proves is <strong>sound scoping and prioritisation under constraint and holding a delivery line</strong>, which is exactly what he's testing for. Claim that, not the bigger word.</p>
 </div>
 
-<div class="line">We're not McKinsey, and here's why that's what you want, every recommendation comes with a <strong>cost and effort estimate we can stand behind because we build these systems the rest of the week.</strong></div>
-
-<div class="line strong">On OZEAON we're designing a data model from scratch, where we control it. On the SSC and audit work we inherited and rebuilt an estate we didn't build. We've now worked data structure from both ends. On 100x we'll be assessing and mapping an estate we didn't build and largely can't rebuild, <strong>same discipline, applied from the opposite direction.</strong> Naming that difference ourselves is more convincing than glossing it.</div>
-
 <p><strong>On people management:</strong> worth claiming as delivery leadership, running the cadence, coordinating the people on the project, keeping things moving, but for a two-person team don't headline it in a way that implies a scale of operation we don't run. It supports the workload-shift question more than the strategy one.</p>
 
 <h3 id="q-proto">How would you identify and prioritise prototyping opportunities?</h3>
@@ -472,13 +472,12 @@
   <li>Is <strong>testable in one or two days</strong> against real 100x data,</li>
   <li>Is <strong>decision-changing</strong>, if the spike fails, the roadmap changes.</li>
 </ul>
-<p>Prioritise by <strong>value-if-true against cost-to-test</strong>. Anything that fails those tests is a demo, not a spike, and <strong>we don't do demos.</strong></p>
-<p>Expect two shapes to surface, and we'd deliberately run a mix of both:</p>
+<p>Prioritise by <strong>value-if-true against cost-to-test</strong>, and expect two shapes to surface, we'd deliberately run a mix of both:</p>
 <ul>
   <li><strong>Low-hanging fruit</strong>, small, obvious, cheap wins that ship value quickly and build trust in the roadmap;</li>
   <li><strong>Conceptual tools that could streamline whole processes</strong>, higher upside but real risk of over-engineering, so we scope them tight and kill them fast if the spike doesn't hold up.</li>
 </ul>
-<p>Finding the balance between the two is the judgement call, and <strong>feasibility is one of our strong points</strong>, because we build these things the rest of the week we can tell quickly what's a two-day spike and what's a three-month project pretending to be one.</p>
+<p>Finding the balance between the two is the judgement call, and <strong>feasibility is one of our strong points</strong>, because we build these things the rest of the week we can tell quickly what's a two-day spike and what's a three-month project pretending to be one. Anything that fails those tests is a demo, not a spike, and <strong>we don't do demos.</strong></p>
 
 <h3 id="q-workload">As a two-person team, how would you manage workload across six months if priorities shifted significantly?</h3>
 <div class="line frame-line">Fixed price is your flexibility. If X comes in, we <strong>name what goes out</strong>, we don't pretend to elastic capacity, and we can't absorb a doubled scope.</div>
