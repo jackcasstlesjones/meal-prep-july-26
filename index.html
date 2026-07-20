@@ -44,9 +44,69 @@
   strong, b { font-weight: 400; }
   h1, h2, h3, h4 { font-weight: 400; }
   .wrap {
-    max-width: 780px;
+    max-width: 860px;
     margin: 0 auto;
     padding: 36px 28px 140px;
+  }
+
+  /* Persistent side TOC (desktop only) */
+  aside.side-toc { display: none; }
+  @media (min-width: 1220px) {
+    aside.side-toc {
+      display: block;
+      position: fixed;
+      top: 40px;
+      left: max(20px, calc((100vw - 860px) / 2 - 250px));
+      width: 220px;
+      max-height: calc(100vh - 72px);
+      overflow-y: auto;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+    aside.side-toc .toc-label {
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    aside.side-toc ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-left: 1px solid var(--rule);
+    }
+    aside.side-toc ul ul {
+      border-left: none;
+      margin: 2px 0 6px 0;
+      padding-left: 10px;
+      font-size: 12px;
+    }
+    aside.side-toc li { margin: 0; }
+    aside.side-toc a {
+      color: var(--muted);
+      text-decoration: none;
+      display: block;
+      padding: 4px 0 4px 14px;
+      margin-left: -1px;
+      border-left: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    aside.side-toc ul ul a {
+      padding: 3px 0 3px 12px;
+      color: color-mix(in srgb, var(--muted) 80%, transparent);
+    }
+    aside.side-toc a:hover { color: var(--accent); }
+    aside.side-toc a.active {
+      color: var(--accent);
+      border-left-color: var(--accent);
+    }
+    aside.side-toc ul > li > a.active {
+      font-weight: 400;
+    }
+    /* Hide inline TOC when side is visible */
+    nav.toc { display: none; }
   }
 
   header.doc {
@@ -171,19 +231,6 @@
   .line.strong::before { content: "Strongest line: "; }
   .line.frame-line::before { content: "Frame to land: "; }
 
-  .lead {
-    color: var(--muted);
-    font-size: 13px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    margin: -6px 0 12px;
-  }
-  .lead.jack { color: #8b3a1c; }
-  @media (prefers-color-scheme: dark) { .lead.jack { color: #e59a78; } }
-  .lead.max { color: #2c5a7a; }
-  @media (prefers-color-scheme: dark) { .lead.max { color: #78b0d4; } }
-
   /* Warning / guardrail block */
   .guardrail {
     border: 1px dashed var(--muted);
@@ -247,7 +294,7 @@
   @media print {
     body { background: #fff; color: #000; font-size: 11pt; }
     .wrap { max-width: none; padding: 0; }
-    nav.toc { display: none; }
+    nav.toc, aside.side-toc { display: none; }
     h2 { color: #000; }
     a { color: #000; }
     h3 { page-break-after: avoid; }
@@ -256,6 +303,48 @@
 </style>
 </head>
 <body>
+
+<aside class="side-toc" aria-label="Contents">
+  <div class="toc-label">Contents</div>
+  <ul>
+    <li><a href="#frame">Frame</a></li>
+    <li><a href="#brief">Behind the brief</a></li>
+    <li><a href="#general">General questions</a>
+      <ul>
+        <li><a href="#q-risk">Biggest hidden risk</a></li>
+        <li><a href="#q-decisions">Decisions at six months</a></li>
+        <li><a href="#q-wg">Working with the WG</a></li>
+        <li><a href="#q-ai-limits">Where AI isn't the answer</a></li>
+        <li><a href="#q-budget">£10k budget add</a></li>
+      </ul>
+    </li>
+    <li><a href="#tandem">Tandem questions</a>
+      <ul>
+        <li><a href="#q-strategy">Org strategy vs. build</a></li>
+        <li><a href="#q-proto">Prioritising prototypes</a></li>
+        <li><a href="#q-workload">Workload if priorities shift</a></li>
+      </ul>
+    </li>
+    <li><a href="#bring">Questions to bring</a></li>
+    <li><a href="#likely">Not on the list</a></li>
+    <li><a href="#shoehorn">Shoehorn</a></li>
+    <li><a href="#questions">Questions</a>
+      <ul>
+        <li><a href="#ask-trigger">Trigger for the review</a></li>
+        <li><a href="#ask-month12">Month twelve</a></li>
+        <li><a href="#ask-wg-authority">WG authority</a></li>
+        <li><a href="#ask-lse">LSE boundary</a></li>
+        <li><a href="#ask-wrong">Imagine going wrong</a></li>
+        <li><a href="#ask-efficiency">Team vs. ventures</a></li>
+        <li><a href="#ask-tried">Already tried internally</a></li>
+        <li><a href="#ask-onhold">Decisions on hold</a></li>
+        <li><a href="#ask-wg-who">Who's on the WG</a></li>
+        <li><a href="#ask-chief">Drew you to 100x</a></li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+
 <div class="wrap">
 
 <header class="doc">
@@ -280,7 +369,7 @@
 <section id="frame">
   <div class="frame">
     <p>Nick has told us how he thinks and handed us the questions. The frame is his: <strong>fit and collaboration, not skills</strong>, he's conceded everyone shortlisted can do the work. The goal is to be the people he wants in the room for six months. Warm, unguarded, thinking out loud, comfortable disagreeing with each other. Over-polished loses this one. <strong>Disagreeing with him thoughtfully is worth more than a polished answer.</strong></p>
-    <p>Agree in advance who leads what, <strong>Jack</strong> on strategy, Working Group and fit; <strong>Max</strong> on risk, prototyping and AI-limits, but both stay live and step in unprompted, because if Max is quiet the "no handoffs, both founders do the work" story rings hollow. No presentation, just Nick, treat it as a conversation.</p>
+    <p>Both stay live and step in unprompted, because if either of us is quiet the "no handoffs, both founders do the work" story rings hollow. No presentation, just Nick, treat it as a conversation.</p>
   </div>
 </section>
 
@@ -291,13 +380,13 @@
 
 <h2 id="general">General questions</h2>
 
-<h3>What do you think is the biggest risk in this project that isn't explicitly mentioned in the brief?</h3>
+<h3 id="q-risk">What do you think is the biggest risk in this project that isn't explicitly mentioned in the brief?</h3>
 <div class="line frame-line">The report-to-implementation gap, a great report nobody owns once we leave. That's why Phase 3 makes the Working Group future governance, not audience.</div>
 <p><strong>Don't say stakeholder availability</strong>, it's already in our proposal and it's what everyone will say. The real risk is the <strong>report-to-implementation gap</strong>: a small team under growth pressure treats this as a systems project, and it ends up owned by nobody once we leave. A good report that doesn't change how people work.</p>
 <p>That's why Phase 3 embeds the Working Group as the future governance body rather than an audience.</p>
 <p>Hold that with conviction, and keep the <strong>LSE systems boundary</strong> in reserve, if LSE's IT environment constrains architecture and AI tooling choices, part of the roadmap could be undeliverable, which is why we probe it in month one, not month five. The reserve option doubles as pre-empting the LSE question.</p>
 
-<h3>At the end of six months, what decisions should the 100x senior team be able to make that they can't make today?</h3>
+<h3 id="q-decisions">At the end of six months, what decisions should the 100x senior team be able to make that they can't make today?</h3>
 <div class="line frame-line">Today those are guesses made in people's heads. In six months they are <strong>decisions with evidence and price tags attached</strong>, and that means less time wrestling systems, more time on the portfolio.</div>
 <p>Answer in their language:</p>
 <ul>
@@ -308,13 +397,12 @@
 </ul>
 <p>Tie back to ventures: better decisions here mean less time wrestling systems and more time on the portfolio.</p>
 
-<h3>How do you propose working with the 100x Data &amp; AI Working Group?</h3>
+<h3 id="q-wg">How do you propose working with the 100x Data &amp; AI Working Group?</h3>
 <div class="line frame-line">Co-analysts, not audience, involved from inception, holding the governance mandate at the end. Success is they don't need us afterwards.</div>
 <p>His favourite theme, so answer with the instinct, not a process diagram. They are <strong>co-analysts, not an audience</strong>, involved from inception, testing findings before they are findings, and handed the governance mandate at the closing session.</p>
 <p>The success condition is that the Working Group doesn't need us afterwards. We'd rather they feel like co-authors. <strong>Don't over-engineer it.</strong></p>
 
-<h3>Where do you think AI is not the right answer for organisations like 100x?</h3>
-<p class="lead max">Max leads</p>
+<h3 id="q-ai-limits">Where do you think AI is not the right answer for organisations like 100x?</h3>
 <div class="line frame-line">Our job is to find the few places AI genuinely frees people up, <strong>not to maximise AI</strong>. Human-in-the-loop is the default, not the exception.</div>
 <p>A trust question, he wants to know we'll tell him not to. Be specific:</p>
 <ul>
@@ -335,7 +423,7 @@
   <p>If either of us has a genuine "we told a client no" story, bring it. Otherwise use the SFCT framing as it actually happened. <strong>Don't manufacture a recommendation-against</strong>, one follow-up unravels it, and this is the question where we can least afford that.</p>
 </div>
 
-<h3>If the budget was increased by £10,000, what would you suggest adding to the scope?</h3>
+<h3 id="q-budget">If the budget was increased by £10,000, what would you suggest adding to the scope?</h3>
 <div class="line frame-line">Convert findings into working things, a running quick-win and capability sessions so the handover sticks. Not more interviews.</div>
 <p>Don't grab, and don't spread it thinner across the review, <strong>convert findings into working things.</strong> More prototype-spike time, or implementing the single top quick-win so the engagement ends with something running, plus a couple of staff capability sessions so the handover sticks.</p>
 <p>Two shapes to offer, framed as a choice for him:</p>
@@ -348,8 +436,8 @@
 
 <h2 id="tandem">Tandem questions</h2>
 
-<h3>Much of your experience involves building systems, which is appealing as we may transition to this phase with our partner. But can you describe a project where your main role was organisational strategy rather than development?</h3>
-<p class="lead jack">Jack leads · most important question, our one soft spot</p>
+<h3 id="q-strategy">Much of your experience involves building systems, which is appealing as we may transition to this phase with our partner. But can you describe a project where your main role was organisational strategy rather than development?</h3>
+<p><em>Most important question, our one soft spot.</em></p>
 <div class="line frame-line">Same discipline the brief needs, scoping and prioritisation under constraint, proven live on OZEAON right now. On 100x, applied from the opposite direction.</div>
 <p><strong>Answer honestly, the honest version is stronger.</strong> Lead with <strong>OZEAON</strong>, where Jack now leads scope definition, phasing and delivery: running standups and the delivery cadence, writing the scope documents, making the prioritisation calls with the team and confirming direction with the founder.</p>
 <p>The <strong>Phase 0-to-6 structure</strong> is the evidence, an enormous product ambition cut into a defensible MVP under a hard 30–45 day window, with follows, mobile responsive, payments and the rest deferred into later phases. That is <strong>ruthless prioritisation under constraint</strong>, which is the muscle this engagement needs. Several of those calls were data-structure calls, the same discipline the brief asks for.</p>
@@ -376,8 +464,7 @@
 
 <p><strong>On people management:</strong> worth claiming as delivery leadership, running the cadence, coordinating the people on the project, keeping things moving, but for a two-person team don't headline it in a way that implies a scale of operation we don't run. It supports the workload-shift question more than the strategy one.</p>
 
-<h3>How would you identify and prioritise prototyping opportunities?</h3>
-<p class="lead max">Max leads</p>
+<h3 id="q-proto">How would you identify and prioritise prototyping opportunities?</h3>
 <div class="line frame-line">Value-if-true against cost-to-test. If a failed spike doesn't change the roadmap, it's a demo, and <strong>we don't do demos</strong>.</div>
 <p><strong>Criteria, not vibes.</strong> A spike qualifies when it:</p>
 <ul>
@@ -393,7 +480,7 @@
 </ul>
 <p>Finding the balance between the two is the judgement call, and <strong>feasibility is one of our strong points</strong>, because we build these things the rest of the week we can tell quickly what's a two-day spike and what's a three-month project pretending to be one.</p>
 
-<h3>As a two-person team, how would you manage workload across six months if priorities shifted significantly?</h3>
+<h3 id="q-workload">As a two-person team, how would you manage workload across six months if priorities shifted significantly?</h3>
 <div class="line frame-line">Fixed price is your flexibility. If X comes in, we <strong>name what goes out</strong>, we don't pretend to elastic capacity, and we can't absorb a doubled scope.</div>
 <p><strong>Don't be defensive</strong>, it's in the proposal as an honest risk with a mitigation.</p>
 <p>The <strong>fixed price is 100x's flexibility</strong>: reprioritisation happens within the envelope at phase boundaries, with explicit trade-offs, if X comes in, we <strong>name what goes out</strong> rather than pretending to elastic capacity.</p>
@@ -426,10 +513,74 @@
 </ol>
 
 <h2 id="questions">Questions</h2>
-<ol class="bring">
-  <li>Who are the Working Group and what expertise do they have?</li>
-</ol>
+<p>Staged by strength, three to lead with, more loaded in reserve, one personal at the end. A conversation format means he's watching whether we probe.</p>
+
+<p><strong>The strongest three, if you only ask three</strong></p>
+
+<h3 id="ask-trigger">What triggered this review now, and why this shape of engagement?</h3>
+<p>Especially worth asking given he doesn't appear in the 2024 team list, so the <strong>Chief Insights Officer role may be recent</strong> and his arrival may itself be the trigger. It's a genuine question and it gets him talking about what he's trying to change.</p>
+
+<h3 id="ask-month12">What would you want to be true at month twelve, beyond the report?</h3>
+<p>This is the one that <strong>invites him to raise the build phase himself</strong> rather than us fishing for it. It also tells us whether he's thinking implementation or just wants the analysis.</p>
+
+<h3 id="ask-wg-authority">What authority does the Data &amp; AI Working Group actually have, can it decide things, or does it recommend upward?</h3>
+<p>Practical for delivery, and it signals we're already thinking about <strong>who owns this after we leave</strong>, which is his register exactly.</p>
+
+<p><strong>Others worth having ready</strong></p>
+
+<h3 id="ask-lse">Where does the boundary with LSE actually sit in practice, IT, security, procurement?</h3>
+<p>This kills two birds, it resolves the one genuine unknown in our proposal and it shows we understood their setup well enough to spot it. Ask it as a <strong>practical scoping question, not a risk flag.</strong></p>
+
+<h3 id="ask-wrong">When you imagine this going wrong, what does it look like?</h3>
+<p>Better than asking what success looks like, which he'll have answered a hundred times. It surfaces his <strong>real anxiety</strong>, and whatever he says is something we can address on the spot.</p>
+
+<h3 id="ask-efficiency">How much of this is about the team's own efficiency versus what the ventures experience?</h3>
+<p><strong>Ventures-first is his thesis</strong>, so this lets him talk about the thing he cares about, and the answer genuinely changes where we'd put the depth.</p>
+
+<h3 id="ask-tried">Has anything already been tried internally, any mapping, any tooling someone's built, any AI that's crept in?</h3>
+<p>Useful for real, and it gently opens the <strong>informal-AI-use question</strong> that our proposal says needs a non-judgemental framing.</p>
+
+<h3 id="ask-onhold">Are there decisions currently on hold waiting for this?</h3>
+<p>Tells us what the actual urgency is and where the review has to land to be worth the money.</p>
+
+<h3 id="ask-wg-who">Who are the Working Group and what expertise do they have?</h3>
+<p>Composition sits alongside the authority question, useful for understanding who we'll be co-analysing with, and where the gaps we need to fill sit.</p>
+
+<p><strong>One personal one</strong></p>
+
+<h3 id="ask-chief">What drew you to 100x, or what does the Chief Insights role cover?</h3>
+<p>A fit conversation runs both ways, and asking him something human near the end is more natural than another process question. <strong>Judge it in the room.</strong></p>
 
 </div>
+
+<script>
+(function () {
+  var links = document.querySelectorAll('aside.side-toc a');
+  if (!links.length) return;
+  var map = {};
+  var targets = [];
+  links.forEach(function (link) {
+    var id = link.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if (el) { map[id] = link; targets.push(el); }
+  });
+  var current = null;
+  function setActive(id) {
+    if (current === id) return;
+    current = id;
+    links.forEach(function (l) { l.classList.remove('active'); });
+    if (map[id]) map[id].classList.add('active');
+  }
+  var io = new IntersectionObserver(function (entries) {
+    var visible = entries.filter(function (e) { return e.isIntersecting; });
+    if (visible.length) {
+      visible.sort(function (a, b) { return a.target.offsetTop - b.target.offsetTop; });
+      setActive(visible[0].target.id);
+    }
+  }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+  targets.forEach(function (t) { io.observe(t); });
+})();
+</script>
+
 </body>
 </html>
