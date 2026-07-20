@@ -1,0 +1,227 @@
+100X
+IMPACT
+ACCELERATOR
+Powered by LSE
+
+LSE
+THE LONDON SCHOOL
+OF ECONOMICS AND
+POLITICAL SCIENCE
+
+100x Impact
+9th Floor, The Marshall Building
+44 Lincoln's Inn Fields
+London, WC2A 2ES
+
+Invitation to quote for Data & AI Review Partner
+QUOTE Ref: 100x Impact Data & AI Review Partner
+
+Summary
+100x Impact and the London School of Economics invite quotations from consultants, consultancies or specialist agencies to deliver a six-month Data & AI Review project. The work will assess 100x's current data landscape, knowledge management practices and AI adoption, while identifying opportunities to strengthen organisational learning, decision-making and effectiveness. The successful partner will undertake data mapping, AI assessment and strategic planning, working closely with the Chief Insights Officer and Data & AI Working Group.
+
+The project budget is up to £30,000 excluding VAT, with proposals due by 11.59pm (UK time) on 23 June 2026.
+
+Invitation to quotes
+You are invited by 100x Impact and the London School of Economics (LSE) to quote for the provision of services detailed in the attached brief documentation. Your quotation must be received by 11.59pm (UK time) Tuesday 23rd June 2026.
+
+It is the responsibility of all suppliers to ensure that their quotation response is received no later than the appointed time. The LSE may undertake not to consider quotations received after that time.
+
+The LSE is not bound to accept the lowest priced or any quote.
+
+The quotation will be evaluated using the following criteria and weightings:
+Evaluation Criteria | Weighting
+Quality | 70%
+Price | 30%
+
+By providing us with a quotation you agree to be bound by the LSE Terms and Conditions which will apply to any contract awarded to you after you have provided us with our quotation. Enquiries and returns regarding this Invitation To Quote should be addressed to Nick Stanhope, Chief Insights Officer, 100x-nick@100ximpact.org
+
+About 100x Impact
+100x Impact
+9th Floor, The Marshall Building
+44 Lincoln's Inn Fields
+London, WC2A 2ES
+
+The world is facing multiple, interconnected challenges - including poverty, inequality, environmental degradation, and health crises. We are not short on social innovation. Across sectors and geographies, many ventures have developed solutions that work. But too few of these solutions reach the scale of the problems they are trying to solve.
+
+100x exists to provide more support for established, high potential ventures to scale their impact. We focus on unlocking the next phase of impact for proven social ventures - combining acceleration capital with tailored support to help them scale what works; deepen their influence within systems; and unlock the wider value of what they have built.
+
+As a growing organisation, 100x is increasingly reliant on high-quality data, knowledge management and emerging technologies such as AI to support decision-making, learning, operational effectiveness and ecosystem engagement.
+
+For more information about 100x, visit 100ximpact.org.
+
+Rationale for this work
+100x is undertaking two connected projects designed to strengthen its organisational foundations for data, learning and AI adoption.
+
+1. Data Mapping
+100x has accumulated a significant amount of venture-related and ecosystem-related data across programmes, functions and platforms. This project will create a structured understanding of:
+- What data exists across the organisation.
+- Where it is stored.
+- How it is used.
+- How it flows between teams and processes.
+- Where there are gaps, inefficiencies or risks.
+- What future systems, governance and capabilities are required.
+
+The project will develop a practical roadmap for strengthening data architecture, governance and organisational learning.
+
+2. AI Review
+AI is already being used across the organisation in a variety of formal and informal ways. This project will assess:
+- Current AI adoption and usage.
+- Existing tools and practices.
+- Opportunities for greater value creation.
+- Risks and governance considerations.
+- Capability gaps and support needs.
+- Strategic priorities for future investment and adoption.
+
+The review will support the development of a practical approach to AI that aligns with organisational priorities, capability and values.
+
+Overall, these projects will help establish stronger foundations for how 100x manages data, generates insight and leverages AI to support its mission.
+
+Integration
+Within this project, we want to give particular attention to how information flows across our platforms; the implications of operating within the London School of Economics technology environment; and the extent to which current systems and data architecture can support future AI-enabled ways of working.
+
+Objectives
+The main objectives of this work are to:
+1. Develop a clear understanding of 100x's data landscape - Create visibility of venture and ecosystem (i.e. wider landscape, partners, stakeholders, etc) data assets, how they are managed, and how they support organisational objectives.
+2. Identify opportunities to improve organisational intelligence - Assess how data can be more effectively structured, governed and utilised to support learning, decision-making and impact.
+3. Understand current AI usage and needs - Develop an evidence-based understanding of how AI is currently being used, where value is being created, and where challenges or risks exist.
+4. Identify priority opportunities for AI adoption - Identify practical opportunities for AI to improve organisational effectiveness, knowledge management and decision-making.
+5. Enable participation, capability and ownership through the Data & AI Working Group - Engage the 100x Data & AI Working Group throughout the project to support contribution, capability building and ownership of future data and AI priorities.
+6. Assess data and technology integration requirements - Understand how data, systems and platforms currently interact (including the relationship between 100x and LSE systems), identify integration constraints and opportunities, and develop recommendations that support future data and AI strategy.
+7. Develop actionable recommendations and roadmaps - Produce clear and prioritised recommendations to guide future investment, capability building, governance and implementation.
+
+Additional objective for 100x:
+Generate learning about how data, knowledge management and AI can work together to strengthen organisational effectiveness and support long-term impact.
+
+Specification
+
+Overview
+100x is seeking a partner to lead the delivery of a six-month Data & AI review project. The successful partner will work closely with the Chief Insights Officer and the wider 100x Data & AI Working Group to design and deliver discovery, analysis, stakeholder engagement and strategic planning activities across both projects.
+
+The work will combine elements of organisational research, data strategy, AI assessment, facilitation and strategic planning.
+
+The total budget available for this service is £30,000 excluding VAT.
+
+Scope of Work
+
+1. Project Management and Coordination
+- Lead overall delivery of the engagement over a six-month period.
+- Develop and maintain project plans, timelines and working rhythms.
+- Coordinate stakeholder engagement activities.
+- Facilitate workshops, interviews and review sessions.
+- Ensure effective documentation, communication and progress reporting.
+
+2. Data Mapping & Planning
+Discovery and Assessment:
+- Conduct interviews and workshops with key stakeholders.
+- Review existing systems, tools, repositories and processes.
+- Develop a comprehensive inventory of venture and ecosystem data assets.
+- Map current data ownership, usage and management practices.
+
+Analysis and Design:
+- Map venture data across the end-to-end venture lifecycle.
+- Map ecosystem data and its organisational uses.
+- Identify gaps, duplication, inefficiencies and risks.
+- Develop core data models and entity definitions.
+- Assess governance, stewardship, privacy and GDPR considerations.
+
+Recommendations and Planning:
+- Identify priority use cases and organisational requirements.
+- Develop recommendations for future data architecture and systems.
+- Propose governance and ownership approaches.
+- Produce a phased implementation roadmap.
+
+3. AI Review
+Current State Assessment:
+- Design and deliver an organisational AI assessment.
+- Review current AI tools, platforms and usage patterns.
+- Assess AI maturity across teams and functions.
+- Identify strengths, challenges and emerging risks.
+
+Opportunity Identification:
+- Identify high-value use cases and workflow opportunities.
+- Assess capability gaps, support needs and barriers to adoption.
+- Explore opportunities for productivity, learning and decision support.
+
+Strategic Recommendations:
+- Develop recommendations for governance, training and capability building.
+- Identify priority AI use cases for further exploration.
+- Develop principles and approaches for responsible AI adoption.
+- Produce a phased roadmap for AI capability development.
+
+4. Synthesis and Strategic Recommendations
+- Bring together findings from both projects.
+- Identify interdependencies between data, knowledge management and AI.
+- Develop a prioritised set of recommendations for implementation.
+- Facilitate discussion and decision-making around next steps.
+- Produce a final synthesis and recommendations report.
+
+5. Data & AI Working Group Enablement
+The successful partner will work closely with the 100x Data & AI Working Group throughout the engagement.
+Activities are expected to include:
+- Engaging the Working Group as a core project stakeholder group.
+- Facilitating discussion and reflection sessions at key project stages.
+- Supporting the group's contribution to discovery, analysis and prioritisation activities.
+- Building shared understanding of good practice in data strategy, governance and AI adoption.
+- Supporting capability development through practical involvement in project activities.
+- Helping define the future role of the Working Group in implementing and governing recommendations emerging from the project.
+
+Partner specification
+The successful partner will demonstrate:
+- Strong expertise in data strategy, governance and organisational data management.
+- Experience designing and delivering data audits, data mapping or data maturity assessments.
+- Practical experience supporting AI adoption and organisational AI strategy.
+- Experience facilitating stakeholder engagement, workshops and discovery processes.
+- Experience building organisational confidence and capability in data and AI.
+- Strong analytical, synthesis and communication skills.
+- Ability to translate technical concepts into practical organisational recommendations.
+- Experience working with social impact organisations, philanthropy, venture support ecosystems or mission-driven organisations would be advantageous.
+
+We welcome proposals from individual consultants, joint consultant teams, consultancies and specialist agencies.
+
+Deliverables
+Indicative deliverables are expected to include:
+
+Data Mapping & Planning:
+- Data inventory and asset register.
+- Venture lifecycle data map.
+- Ecosystem data map.
+- Core data model and entity definitions.
+- Governance and ownership recommendations.
+- Data roadmap and implementation plan.
+
+AI Review:
+- AI usage and maturity assessment.
+- AI needs and opportunity map.
+- AI governance and capability recommendations.
+- Prioritised AI use case portfolio.
+- AI roadmap and adoption recommendations.
+
+Final Outputs:
+- Integrated Data & AI findings report.
+- Strategic recommendations and prioritisation framework.
+- Final presentation and discussion workshop.
+
+The exact format of outputs will be agreed during project initiation.
+
+Contract terms and budget
+This is a fixed-term contract engagement with an anticipated duration of six months. The maximum budget available for this work is £30,000 excluding of VAT.
+
+Timeline
+Stage | Date
+Invitation to Quote published | Monday 8th June 2026
+Proposals due | Tuesday 23rd June 2026
+Decisions made | Friday 26th June 2026
+Agreement in place | Wednesday 15th July 2026
+Project kick-off | Wednesday 2nd September 2026
+
+Your response
+The response should include:
+- A brief summary of your proposed approach and methodology.
+- Relevant experience and examples of similar work.
+- Proposed team structure and key personnel.
+- A budget breakdown and payment schedule.
+- Any assumptions, risks or dependencies you believe should be considered.
+
+Please ensure your response does not exceed 5 pages (excluding separate attachments requested). You may respond with a pdf or word document.
+
+Please email your proposal to nick@100ximpact.org by 11.59pm (UK time) Tuesday 23rd June 2026.
